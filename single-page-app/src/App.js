@@ -1,31 +1,31 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Button from './components/Button';
+import './styles/App.css';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import { Link, Route } from 'react-router-dom';
+import Home from './sences/Home';
+import Dashboard from './sences/Dashboard';
 
 class App extends Component {
-
-  handleClick = () => {
-    import('./components/ActionHandler')
-      .then(({ handleClick }) => {
-        handleClick();
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
 
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Button onClick={this.handleClick} title='Click Me'/>
+        <Navbar>
+          <Navbar.Header>
+            <Navbar.Brand>
+              <Link to="/home">React SPA</Link>
+            </Navbar.Brand>
+          </Navbar.Header>
+          <Nav>
+            <NavItem eventKey={1} href="#">
+              <Link to="/dashboard">Dashboard</Link>
+            </NavItem>
+          </Nav>
+        </Navbar>
+        <div>
+          <Route path="/home" component={Home} />
+          <Route path="/dashboard" component={Dashboard} />
+        </div>
       </div>
     );
   }
