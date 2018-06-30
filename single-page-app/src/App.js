@@ -1,8 +1,20 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Button from './components/Button';
 
 class App extends Component {
+
+  handleClick = () => {
+    import('./components/ActionHandler')
+      .then(({ handleClick }) => {
+        handleClick();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   render() {
     return (
       <div className="App">
@@ -13,6 +25,7 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+        <Button onClick={this.handleClick} title='Click Me'/>
       </div>
     );
   }

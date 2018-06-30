@@ -1,0 +1,15 @@
+.Button{
+    padding: 10px;
+    background-color: dodgerblue;
+    color: aliceblue;
+    display: inline;
+    outline: none;
+    font-size: 16px;
+    border: none;
+    :hover{
+        cursor: pointer;
+    }
+    :focus{
+        box-shadow: 0 0 2px 2px deepskyblue;
+    }
+}
