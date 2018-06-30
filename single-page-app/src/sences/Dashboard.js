@@ -1,9 +1,19 @@
 import React, { Component } from 'react';
+import { Link, Route } from 'react-router-dom';
+import Tacos from './Tacos';
 
 class Dashboard extends Component {
     render() {
         return (
-            <div>This is dashboard</div>
+            <div>
+                <h3>
+                    This is dashboard
+                </h3>
+                <Route
+                    path={this.props.match.url + '/tacos'}
+                    component={Tacos}
+                />
+            </div>
         )
     }
 }
