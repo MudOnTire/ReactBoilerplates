@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './styles/App.css';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
-import { Link, Route } from 'react-router-dom';
+import { Link, Route, Switch, NavLink } from 'react-router-dom';
 import Home from './sences/Home';
 import Dashboard from './sences/Dashboard';
+import NotFound from './sences/404';
 
 class App extends Component {
 
@@ -13,19 +14,21 @@ class App extends Component {
         <Navbar>
           <Navbar.Header>
             <Navbar.Brand>
-              <Link to="/home">React SPA</Link>
+              <Link to="/">React SPA</Link>
             </Navbar.Brand>
           </Navbar.Header>
           <Nav>
             <NavItem eventKey={1} href="#">
-              <Link to="/dashboard">Dashboard</Link>
+              {/* <Link to="/dashboard">Dashboard</Link> */}
+              <NavLink to="/dashboard" activeClassName="active">Dashboard</NavLink>
             </NavItem>
           </Nav>
         </Navbar>
-        <div>
-          <Route path="/home" component={Home} />
+        <Switch>
+          <Route exact path="/" component={Home} />
           <Route path="/dashboard" component={Dashboard} />
-        </div>
+          <Route component={NotFound} />
+        </Switch>
       </div>
     );
   }
