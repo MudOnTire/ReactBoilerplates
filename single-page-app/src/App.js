@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './styles/App.css';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
-import { Link, Route, Switch, NavLink } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 import Home from './sences/Home';
 import Dashboard from './sences/Dashboard';
 import NotFound from './sences/404';
@@ -19,8 +19,7 @@ class App extends Component {
           </Navbar.Header>
           <Nav>
             <NavItem eventKey={1} href="#">
-              {/* <Link to="/dashboard">Dashboard</Link> */}
-              <NavLink to="/dashboard" activeClassName="active">Dashboard</NavLink>
+              <Link to="/dashboard">Dashboard</Link>
             </NavItem>
           </Nav>
         </Navbar>
