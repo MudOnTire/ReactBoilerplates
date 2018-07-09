@@ -670,7 +670,7 @@ PORT=9000 npm start
 这样我们就解决了自定义服务的部署。重启项目后刷新详情页也能够正常访问了。
 
 
-这样，我们就了解了next.js的基本使用方法，如果有疑问可以查看next.js官方文档，也可以给我留言讨论。
+到此为止，我们就了解了next.js的基本使用方法，如果有疑问可以查看next.js官方文档，也可以给我留言讨论。
 
 - 本文Demo源码：[Github 源码](https://github.com/MudOnTire/ReactBoilerplates/tree/master/server-rendered-website)
 - next.js官网：[https://nextjs.org/](https://nextjs.org/)
