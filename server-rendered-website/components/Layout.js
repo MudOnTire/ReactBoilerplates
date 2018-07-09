@@ -10,6 +10,13 @@ const Layout = (props) => (
     <div style={layoutStyle}>
         <Header />
         {props.children}
+        <style jsx global>
+            {`
+                a:hover{
+                    text-decoration:underline;
+                }
+            `}
+        </style>
     </div>
 )
 
