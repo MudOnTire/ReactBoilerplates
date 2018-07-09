@@ -16,10 +16,9 @@ app.prepare()
         server.get('*', (req, res) => {
             return handle(req, res);
         });
-        const port = process.env.PORT ? process.env.PORT : 3000;
-        server.listen(port, (err) => {
+        server.listen(3000, (err) => {
             if (err) throw err;
-            console.log(`> Ready on http://localhost:${port}`);
+            console.log(`> ${process.env.NODE_ENV} Ready on http://localhost:3000`);
         });
     })
     .catch((ex) => {

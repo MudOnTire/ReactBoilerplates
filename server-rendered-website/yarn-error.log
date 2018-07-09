@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn start
+  /usr/local/bin/node /usr/local/bin/yarn run start
 
 PATH: 
   /Applications/mongodb/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/mongodb/bin:/Users/brucezhang/Library/Android/sdk/tools:/Users/brucezhang/Library/Android/sdk/platform-tools:/Users/brucezhang/Library/Android/sdk/tools:/Users/brucezhang/Library/Android/sdk/platform-tools
@@ -29,7 +29,7 @@ npm manifest:
     "scripts": {
       "dev": "node server.js",
       "build": "next build",
-      "start": "next start -p $PORT"
+      "start": "NODE_ENV=production node server.js"
     }
   }
 
@@ -4372,7 +4372,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c next start -p $PORT
+  Arguments: -c NODE_ENV=production node server.js
   Directory: /Users/brucezhang/Documents/Bruce/Projects/ReactBoilerplates/server-rendered-website
   Output:
   
